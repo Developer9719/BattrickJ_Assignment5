@@ -52,6 +52,7 @@ func _physics_process(delta):
 	elif global_position.x > screen_size.x:
 		global_position.x = 0
 
+# Create instance of laser and shoot it in the right direction and rotation
 func shoot_laser():
 	var l = laser_scene.instantiate()
 	l.global_position = muzzle.global_position
