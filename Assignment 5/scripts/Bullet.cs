@@ -1,15 +1,25 @@
 using Godot;
 using System;
 
-public partial class Bullet : Area2D
+public class partial Laser : Area2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+    // Direction vector and speed for the laser
+    private Vector2 movementVector = new Vector2(0, -1);
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    [Export] // Makes the speed variable editable in the Godot editor
+    public double speed = 500;
+
+    // Called every physics frame. 'delta' is the time elapsed since the previous frame.
+    public override void _PhysicsProcess(double delta)
+    {
+        // Move the laser based on its rotation
+        GlobalPosition += movementVector.Rotated(Rotation) * speed * delta;
+    }
+
+    // Called when the laser exits the screen (via the VisibleOnScreenNotifier2D)
+    private void _on_VisibleOnScreenNotifier2D_screen_exited()
+    {
+        // Deletes the laser when it leaves the screen
+        QueueFree();
+    }
 }

@@ -1,13 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyhhpqfptoxhj"]
 
 [ext_resource type="Texture2D" uid="uid://1yeisoq2mdnf" path="res://assets/bulletSprite.png" id="1_0f8c0"]
-[ext_resource type="Script" path="res://scripts/Bullet.cs" id="1_6we0s"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_r0juo"]
+script/source = "using Godot;
+using System;
+
+public partial class Bullet : Node2D
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wgn3f"]
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Node2D"]
 scale = Vector2(0.0895904, 0.0895904)
-script = ExtResource("1_6we0s")
+script = SubResource("CSharpScript_r0juo")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,5 +33,6 @@ scale = Vector2(0.225124, 0.225124)
 texture = ExtResource("1_0f8c0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(-2.18399, 9.12531)
+rotation = -3.14159
+scale = Vector2(2.18399, -9.12531)
 shape = SubResource("CircleShape2D_wgn3f")

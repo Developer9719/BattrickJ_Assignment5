@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://rypoibhm2hrj"]
+[gd_scene load_steps=6 format=3 uid="uid://rypoibhm2hrj"]
 
+[ext_resource type="Script" path="res://scripts/game.cs" id="1_22jfh"]
 [ext_resource type="Texture2D" uid="uid://cism8qy4dv6hx" path="res://assets/background.jpg" id="1_g6ibw"]
 [ext_resource type="PackedScene" uid="uid://q2p4a2fo23nl" path="res://scenes/player.tscn" id="2_rgthk"]
 [ext_resource type="PackedScene" uid="uid://6mslgdo7pjyi" path="res://scenes/asteroid.tscn" id="3_v0aep"]
 [ext_resource type="PackedScene" uid="uid://dyhhpqfptoxhj" path="res://scenes/bullet.tscn" id="4_0gs0m"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_22jfh")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(555, 395)

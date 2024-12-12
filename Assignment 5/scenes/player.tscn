@@ -1,12 +1,29 @@
 [gd_scene load_steps=4 format=3 uid="uid://q2p4a2fo23nl"]
 
-[ext_resource type="Script" path="res://scripts/Player.cs" id="1_f7dag"]
 [ext_resource type="Texture2D" uid="uid://bmrhr6rmeomse" path="res://assets/playerSprite.png" id="1_fi8uh"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_qx80q"]
+script/source = "using Godot;
+using System;
+
+public partial class Player : Node2D
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13cpq"]
 
-[node name="Player" type="Area2D"]
-script = ExtResource("1_f7dag")
+[node name="Player" type="Node2D"]
+script = SubResource("CSharpScript_qx80q")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
