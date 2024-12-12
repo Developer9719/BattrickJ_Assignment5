@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://rypoibhm2hrj"]
+
+[ext_resource type="Texture2D" uid="uid://cism8qy4dv6hx" path="res://assets/background.jpg" id="1_g6ibw"]
+[ext_resource type="PackedScene" uid="uid://q2p4a2fo23nl" path="res://scenes/player.tscn" id="2_rgthk"]
+[ext_resource type="PackedScene" uid="uid://6mslgdo7pjyi" path="res://scenes/asteroid.tscn" id="3_v0aep"]
+[ext_resource type="PackedScene" uid="uid://dyhhpqfptoxhj" path="res://scenes/bullet.tscn" id="4_0gs0m"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(555, 395)
+scale = Vector2(2.05117, 2.25479)
+texture = ExtResource("1_g6ibw")
+
+[node name="Player" parent="." instance=ExtResource("2_rgthk")]
+position = Vector2(538, 367)
+
+[node name="asteroid" parent="." instance=ExtResource("3_v0aep")]
+position = Vector2(129, 121)
+
+[node name="asteroid2" parent="." instance=ExtResource("3_v0aep")]
+position = Vector2(263, 341)
+
+[node name="asteroid3" parent="." instance=ExtResource("3_v0aep")]
+position = Vector2(1031, 496)
+
+[node name="asteroid4" parent="." instance=ExtResource("3_v0aep")]
+position = Vector2(843, 119)
+
+[node name="asteroid5" parent="." instance=ExtResource("3_v0aep")]
+position = Vector2(651, 602)
+
+[node name="asteroid6" parent="." instance=ExtResource("3_v0aep")]
+position = Vector2(271, 632)
+
+[node name="Bullet" parent="." instance=ExtResource("4_0gs0m")]
+position = Vector2(540, 315)

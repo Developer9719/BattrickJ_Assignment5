@@ -1,18 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://q2p4a2fo23nl"]
+[gd_scene load_steps=4 format=3 uid="uid://q2p4a2fo23nl"]
 
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_f7dag"]
 [ext_resource type="Texture2D" uid="uid://bmrhr6rmeomse" path="res://assets/playerSprite.png" id="1_fi8uh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13cpq"]
 
 [node name="Player" type="Area2D"]
+script = ExtResource("1_f7dag")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(544, 276)
+position = Vector2(-0.814148, -4.6814)
 scale = Vector2(0.159292, 0.159292)
 texture = ExtResource("1_fi8uh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(546, 282)
+position = Vector2(1.18579, 1.31857)
 scale = Vector2(4.83333, 3.55556)
 shape = SubResource("CircleShape2D_13cpq")
